@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- meta_tags for styling -->
+    <title><h1>Battleship Game</h1></title>
+    <meta name='description' content='<%= full_meta(yield(:meta)) %>' >
+    
+    <!-- ownership -->
+    <meta id="MetaCopyright" name="COPYRIGHT" content="">
+    <meta id="MetaAuthor" name="AUTHOR" content="">
+
+    
+    <!-- CSS / SCSS -->
+    <!-- <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
+
+    <!-- JS -->
+    <!-- <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+  </head>
+
+  <body>
+    <header>
+      <div></div>
+    </header>
+    <div>
+      <h2>Lottery Contract</h2>
+      <p>
+        This contract is managed by {this.state.manager}. There are currently{' '}
+        {this.state.players.length} people entered, competing to win{' '}
+        {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+      </p>
+
+      <hr />
+
+      <form onSubmit={this.onSubmit}>
+        <h4>Want to try your luck?</h4>
+        <div>
+          <label>Amount of ether to enter</label>
+          <input
+            value={this.state.value}
+            onChange={event => this.setState({ value: event.target.value })}
+          />
+        </div>
+        <button>Enter</button>
+      </form>
+
+      <hr />
+
+      <h4>Ready to pick a winner?</h4>
+      <button onClick={this.onClick}>Pick a winner!</button>
+
+      <hr />
+
+      <h1>{this.state.message}</h1>
+    </div>
+    
+  </body>
+</html>
+
+
