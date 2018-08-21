@@ -1,8 +1,8 @@
 {
-  "name": "Afile",
+  "name": "Battleship",
   "version": "1.0.0",
   "description": "",
-  "main": "truffle-config.js",
+  "main": "truffle.js",
   "directories": {
     "test": "test"
   },
