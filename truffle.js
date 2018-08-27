@@ -11,11 +11,11 @@
  *     gasPrice: 10000000000,
  *   },
  */
-
+ 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
-
+  
   networks: {
     development: {
       host: "127.0.0.1",

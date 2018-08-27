@@ -5,10 +5,16 @@ import "truffle/DeployedAddresses.sol";
 import "../contracts/Battleship.sol";
 
 contract TestBattleship {
-	Battleship battleShip = Battleship(DeployedAddresses.Battleship());
+	// Battleship battleShip = Battleship(DeployedAddresses.Battleship());
+	// Battleship battleship = new Battleship();
 
 	function testConstructor() public {
 		Assert.equal(msg.sender, msg.sender, "canary test");
+	}
+
+	function testSettingAnOwnerDuringCreation() public {
+		Battleship battleship = new Battleship();
+		Assert.equal(battleship.owner(), this, "An owner is set.");
 	}
 
 }

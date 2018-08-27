@@ -1,0 +1,580 @@
+{
+  "contractName": "CounterLib",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "self",
+          "type": "CounterLib.Counter storage"
+        }
+      ],
+      "name": "incremented",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60df61002f600b82828239805160001a6073146000811461001f57610021565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600436106056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632ecff27f14605b575b600080fd5b818015606657600080fd5b506083600480360381019080803590602001909291905050506099565b6040518082815260200191505060405180910390f35b6000816000016000815460010191905081905590509190505600a165627a7a7230582061fe09705567aa1e802a4ab63a6412ef434f37f76fafeb753320294b519f8a840029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600436106056576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632ecff27f14605b575b600080fd5b818015606657600080fd5b506083600480360381019080803590602001909291905050506099565b6040518082815260200191505060405180910390f35b6000816000016000815460010191905081905590509190505600a165627a7a7230582061fe09705567aa1e802a4ab63a6412ef434f37f76fafeb753320294b519f8a840029",
+  "sourceMap": "27:156:1:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
+  "deployedSourceMap": "27:156:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;84:97;;8:9:-1;5:2;;;30:1;27;20:12;5:2;84:97:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;143:4;168;:6;;;166:8;;;;;;;;;;159:15;;84:97;;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\n\nlibrary CounterLib {\n    struct Counter { uint i; }\n\n    function incremented(Counter storage self) public returns (uint) {\n        return ++self.i;\n    }\n}",
+  "sourcePath": "/Users/dougharman/Battleship-ConsenSys-Final-Project-Doug-Harman/contracts/CounterLib.sol",
+  "ast": {
+    "absolutePath": "/Users/dougharman/Battleship-ConsenSys-Final-Project-Doug-Harman/contracts/CounterLib.sol",
+    "exportedSymbols": {
+      "CounterLib": [
+        1049
+      ]
+    },
+    "id": 1050,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1033,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1049,
+        "linearizedBaseContracts": [
+          1049
+        ],
+        "name": "CounterLib",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CounterLib.Counter",
+            "id": 1036,
+            "members": [
+              {
+                "constant": false,
+                "id": 1035,
+                "name": "i",
+                "nodeType": "VariableDeclaration",
+                "scope": 1036,
+                "src": "69:6:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1034,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "69:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Counter",
+            "nodeType": "StructDefinition",
+            "scope": 1049,
+            "src": "52:26:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1047,
+              "nodeType": "Block",
+              "src": "149:32:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1045,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": true,
+                    "src": "166:8:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1043,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1038,
+                        "src": "168:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Counter_$1036_storage_ptr",
+                          "typeString": "struct CounterLib.Counter storage pointer"
+                        }
+                      },
+                      "id": 1044,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "i",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1035,
+                      "src": "168:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1042,
+                  "id": 1046,
+                  "nodeType": "Return",
+                  "src": "159:15:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1048,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "incremented",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1039,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1038,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "105:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Counter_$1036_storage_ptr",
+                    "typeString": "struct CounterLib.Counter"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1037,
+                    "name": "Counter",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1036,
+                    "src": "105:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Counter_$1036_storage_ptr",
+                      "typeString": "struct CounterLib.Counter"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "104:22:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1042,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1041,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "143:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1040,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "143:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "142:6:1"
+            },
+            "scope": 1049,
+            "src": "84:97:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1050,
+        "src": "27:156:1"
+      }
+    ],
+    "src": "0:183:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/dougharman/Battleship-ConsenSys-Final-Project-Doug-Harman/contracts/CounterLib.sol",
+    "exportedSymbols": {
+      "CounterLib": [
+        1049
+      ]
+    },
+    "id": 1050,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1033,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1049,
+        "linearizedBaseContracts": [
+          1049
+        ],
+        "name": "CounterLib",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CounterLib.Counter",
+            "id": 1036,
+            "members": [
+              {
+                "constant": false,
+                "id": 1035,
+                "name": "i",
+                "nodeType": "VariableDeclaration",
+                "scope": 1036,
+                "src": "69:6:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1034,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "69:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Counter",
+            "nodeType": "StructDefinition",
+            "scope": 1049,
+            "src": "52:26:1",
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1047,
+              "nodeType": "Block",
+              "src": "149:32:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 1045,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": true,
+                    "src": "166:8:1",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 1043,
+                        "name": "self",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1038,
+                        "src": "168:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Counter_$1036_storage_ptr",
+                          "typeString": "struct CounterLib.Counter storage pointer"
+                        }
+                      },
+                      "id": 1044,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "i",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1035,
+                      "src": "168:6:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 1042,
+                  "id": 1046,
+                  "nodeType": "Return",
+                  "src": "159:15:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1048,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "incremented",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1039,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1038,
+                  "name": "self",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "105:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Counter_$1036_storage_ptr",
+                    "typeString": "struct CounterLib.Counter"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1037,
+                    "name": "Counter",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1036,
+                    "src": "105:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Counter_$1036_storage_ptr",
+                      "typeString": "struct CounterLib.Counter"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "104:22:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1042,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1041,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1048,
+                  "src": "143:4:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1040,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "143:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "142:6:1"
+            },
+            "scope": 1049,
+            "src": "84:97:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1050,
+        "src": "27:156:1"
+      }
+    ],
+    "src": "0:183:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "1535125204261": {
+      "events": {},
+      "links": {},
+      "address": "0x01ec25add42856922a9b436e2898cb893cea4ecf",
+      "transactionHash": "0xa3c929052d9b28b28eb1d2fd39fd61e99df97d12cf3281b081508b0f2360eae6"
+    },
+    "1535143945246": {
+      "events": {},
+      "links": {},
+      "address": "0x87a8714fd2749cb8f7677b0ed89e7fcd594972e8",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535144216237": {
+      "events": {},
+      "links": {},
+      "address": "0x71a875069e58c57776880c97d1c73f646b596e84",
+      "transactionHash": "0xa45bb74c491c5c5eacf031f1ec6baeec1751e64f8df36e302b91af1d90fb93e4"
+    },
+    "1535198329324": {
+      "events": {},
+      "links": {},
+      "address": "0x52f5193f996fba6aa8e523ca3f768b777139ff29",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535200485361": {
+      "events": {},
+      "links": {},
+      "address": "0xbef6e4819c0bedcb8e9e45ec575bff00bcfe0251",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535205633709": {
+      "events": {},
+      "links": {},
+      "address": "0x9cfce42532db52125bbe1303041b885cf7bf17de",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535227928566": {
+      "events": {},
+      "links": {},
+      "address": "0xa327b5b8f88ef7a7796816c0028a79fdec46b166",
+      "transactionHash": "0x5fce7a28dada1d9cb64f62f3a4deb1894b1ae3ea801062d8a589a9d04ba5203a"
+    },
+    "1535238568021": {
+      "events": {},
+      "links": {},
+      "address": "0xedaab8a64a162b04ed3c3ef110018ccf0feeba9f",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535244377367": {
+      "events": {},
+      "links": {},
+      "address": "0x8e5f4f63a666b3e886bda38c421e520da62f00b7",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535248979190": {
+      "events": {},
+      "links": {},
+      "address": "0x1761645dfff0aed75f5756edebbef70062fa5e97",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535251980338": {
+      "events": {},
+      "links": {},
+      "address": "0xf26b3e92a0ceb4c9fcd760442e9d8a440e031040",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535309942992": {
+      "events": {},
+      "links": {},
+      "address": "0x16e56dd813e22a19cfeda0251e8728455eb08917",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535321525235": {
+      "events": {},
+      "links": {},
+      "address": "0x2aa6eaa820343b6b47a8ffe7d3bdc3dcb11f89b1",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535322685569": {
+      "events": {},
+      "links": {},
+      "address": "0x0474dbec744061fc5fec1f059c5cf747777c0bc5",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535324208519": {
+      "events": {},
+      "links": {},
+      "address": "0xfd8205b102566f0bd3b1395aa23191126f964fe5",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535326442666": {
+      "events": {},
+      "links": {},
+      "address": "0xb7bb9b24de9a8fbb2ec5220c24ad74496661f250",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    },
+    "1535331114845": {
+      "events": {},
+      "links": {},
+      "address": "0x633d37eeb62bcd89e45900d3fde20272545d0359",
+      "transactionHash": "0xe3e5fe01b62fec7332b0a03335bcfd744a67a4c772798414fc20212b7b1458f2"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-08-27T00:52:12.152Z"
+}
