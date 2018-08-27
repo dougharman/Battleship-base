@@ -6,7 +6,7 @@ var contractAddress;
 contract('Battleship', accounts => {
   // let battleship
 
-  /* Stretch attempts - 
+  /* Stretch attempts -
       importing test helpers
       const assertRevert = require('zeppelin-solidity/test/helpers/assertRevert');
       const expectThrow = require('zeppelin-solidity/test/helpers/expectThrow');
@@ -18,7 +18,7 @@ contract('Battleship', accounts => {
   // @dev - maliciousExternalAccount is only used to test the fallback function
   const maliciousExternalAccount = accounts[3];
   const emptyAddress = '0x0000000000000000000000000000000000000000';
-  
+
 
   /* @dev - set-up
             ensures that tests are independent of one another, i.e., a new instance
@@ -61,10 +61,10 @@ contract('Battleship', accounts => {
   it('is unable to accept funds', async function () {
     const battleship = await Battleship.at(contractAddress);
     try {
-      await battleship.sendTransaction({ 
-        value: 1e+18, 
-        from: accounts[3], 
-        gas: '1000000' 
+      await battleship.sendTransaction({
+        value: 1e+18,
+        from: accounts[3],
+        gas: '1000000'
       })
       assert(false);
     } catch (err) {
@@ -81,20 +81,20 @@ contract('Battleship', accounts => {
   });
 
 
-  // ================================================================================
-  // startGame() tests 
-  // ================================================================================
-    
-  // @dev testing function startGame() - 
+  /* ================================================================================
+     startGame() tests
+  */ ================================================================================
+
+  // @dev testing function startGame() -
   // @notice - an entrance fee / minimum bet of 5 ether is required
   it('requires an entrance fee of 5 ether', async () => {
     const battleship = await Battleship.at(contractAddress);
     var eventEmitted = false
     try {
-      await battleship.methods.startGame().send({ 
+      await battleship.methods.startGame().send({
         value: web3.utils.toWei('5', 'ether'),
-        from: accounts[1], 
-        gas: '1000000' 
+        from: accounts[1],
+        gas: '1000000'
       });
       assert(false);
     } catch (err) {
@@ -108,10 +108,10 @@ contract('Battleship', accounts => {
     const battleship = await Battleship.at(contractAddress);
     var eventEmitted = false
     try {
-      await battleship.methods.startGame().send({ 
+      await battleship.methods.startGame().send({
         value: web3.utils.toWei(5, 'ether'),
-        from: accounts[1], 
-        gas: '1000000' 
+        from: accounts[1],
+        gas: '1000000'
       });
       assert(false);
     } catch (err) {
@@ -126,11 +126,11 @@ contract('Battleship', accounts => {
     const player1BalanceBefore = 100;
 
     try {
-      await battleship.methods.startGame().send({ 
+      await battleship.methods.startGame().send({
         value: web3.utils.toWei(5, 'ether'),
-        from: accounts[1], 
+        from: accounts[1],
         to: accounts[0],
-        gas: '1000000' 
+        gas: '1000000'
       });
       assert(false);
     } catch (err) {
@@ -142,9 +142,9 @@ contract('Battleship', accounts => {
     assert.notEqual(player1BalanceAfter, 100);
   });
 
-  // ================================================================================
-  // acceptChallenge(uint guess) tests 
-  // ================================================================================
+  /* ================================================================================
+     acceptChallenge(uint guess) tests
+  */ ================================================================================
 
   // @dev testing function acceptChallenge(uint guess)
   it('allows player2 to accept the challenge', async () => {
@@ -152,12 +152,12 @@ contract('Battleship', accounts => {
     const player2BalanceBefore = 100;
 
     try {
-      await battleship.methods.acceptChallenge(guess).send({ 
+      await battleship.methods.acceptChallenge(guess).send({
         guess: 42,
         value: web3.utils.toWei(0, 'ether'),
-        from: accounts[2], 
+        from: accounts[2],
         to: accounts[0],
-        gas: '1000000' 
+        gas: '1000000'
       });
       assert(false);
     } catch (err) {
@@ -165,14 +165,14 @@ contract('Battleship', accounts => {
     }
 
     var player2BalanceAfter = await web3.eth.getBalance(player2).toNumber;
-    
+
     assert.notEqual(player2BalanceAfter, 100, "Player 2 accepted the challenge.");
   });
 
-  // ================================================================================
-  // takeTurnsAttacking(uint guess, uint result) tests 
-  // ================================================================================
-  
+  /* ================================================================================
+     takeTurnsAttacking(uint guess, uint result) tests
+  */ ================================================================================
+
   /* @dev - testing function takeTurnsAttacking(uint guess, uint result)
             this test will fail
             we can not directly test a variable, i.e., turnCount
@@ -186,7 +186,7 @@ contract('Battleship', accounts => {
     assert.isTrue(turnCount ==  1, player1, "Player1 has the 'even' turns.")
   });
 
-  
+
 
   /* @dev - testing function takeTurnsAttacking(uint guess, uint result)
             turnCount is a variable that can not be directly tested
@@ -195,14 +195,14 @@ contract('Battleship', accounts => {
   it('should increment turnCount and logOfGuesses', async() => {
     const battleship = await Battleship.at(contractAddress);
     const turnCount = 19;
-    await battleship.methods.acceptChallenge(guess).send({ 
+    await battleship.methods.acceptChallenge(guess).send({
     });
   });
 
-  // ================================================================================
-  // gameOver() tests 
-  // ================================================================================
-    
+  /* ================================================================================
+     gameOver() tests
+  */ ================================================================================
+
   // @dev testing function gameOver()
   it('should signify that a player has 5 hits', async() => {
     const battleship = await Battleship.at(contractAddress);
@@ -218,23 +218,22 @@ contract('Battleship', accounts => {
 
 
   });
-  // ================================================================================
-  // declareWinner() tests 
-  // ================================================================================
-  
+  /* ================================================================================
+     declareWinner() tests
+  */ ================================================================================
+
   // @dev testing function declareWinner() - checking the 'cheat check'
   it('should catch a player that cheats', async() => {
-    
+
   });
 
-  // ================================================================================
-  // withdrawTheMoney() tests 
-  // ================================================================================
+  /* ================================================================================
+     withdrawTheMoney() tests
+  */ ================================================================================
   
   // @dev testing function withdrawTheMoney()
   it('should permit the owner and winner(s) to withdraw money', async() => {
-    
+
   });
 
 });
-
