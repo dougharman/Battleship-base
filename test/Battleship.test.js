@@ -83,8 +83,8 @@ contract('Battleship', accounts => {
 
   /* ================================================================================
      startGame() tests
-  */ ================================================================================
-
+     ================================================================================
+  */
   // @dev testing function startGame() -
   // @notice - an entrance fee / minimum bet of 5 ether is required
   it('requires an entrance fee of 5 ether', async () => {
@@ -144,8 +144,8 @@ contract('Battleship', accounts => {
 
   /* ================================================================================
      acceptChallenge(uint guess) tests
-  */ ================================================================================
-
+     ================================================================================
+  */
   // @dev testing function acceptChallenge(uint guess)
   it('allows player2 to accept the challenge', async () => {
     const battleship = await Battleship.at(contractAddress);
@@ -171,8 +171,8 @@ contract('Battleship', accounts => {
 
   /* ================================================================================
      takeTurnsAttacking(uint guess, uint result) tests
-  */ ================================================================================
-
+     ================================================================================
+  */
   /* @dev - testing function takeTurnsAttacking(uint guess, uint result)
             this test will fail
             we can not directly test a variable, i.e., turnCount
@@ -201,8 +201,8 @@ contract('Battleship', accounts => {
 
   /* ================================================================================
      gameOver() tests
-  */ ================================================================================
-
+     ================================================================================
+  */
   // @dev testing function gameOver()
   it('should signify that a player has 5 hits', async() => {
     const battleship = await Battleship.at(contractAddress);
@@ -220,8 +220,8 @@ contract('Battleship', accounts => {
   });
   /* ================================================================================
      declareWinner() tests
-  */ ================================================================================
-
+     ================================================================================
+  */
   // @dev testing function declareWinner() - checking the 'cheat check'
   it('should catch a player that cheats', async() => {
 
@@ -229,8 +229,8 @@ contract('Battleship', accounts => {
 
   /* ================================================================================
      withdrawTheMoney() tests
-  */ ================================================================================
-  
+     ================================================================================
+  */
   // @dev testing function withdrawTheMoney()
   it('should permit the owner and winner(s) to withdraw money', async() => {
 
